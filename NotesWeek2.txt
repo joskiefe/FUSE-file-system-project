@@ -1,0 +1,28 @@
+Joshua Kiefer:  During our saturday meeting i worked with Andrew to create a mount point for our fuse file system. 
+One sources i used was https://github.com/xolox/dedupfs as an example.
+Also assisted John and David with numpy library usage of .diff operation that will determine length of intervals.
+In addition collaborated with clearing spacing and formatting issues of timestamp files. 
+All extraneous new lines and none float variables were cleaned up. Assisted David and John with the testing of our mountpoint.
+Initially our results lead to the creation of a mount point directory that had unknown permissions values and unreadable/writable
+behaviour, more testing and modifications are needed .
+
+John Hutchins:  Worked with David on the FUSE system, we got code written to grab and remove timestamps from file without disturbing
+other timestamps.  Also got a function set up that would clean out the timestamp file, specifically it removes extra spaces and lines
+with multiple timestamps.  We also got an RNG function set up using the timestamps converted into random numbers as a seed.  
+ 
+Andrew Stone:We met as a group for most of the afternoon and evening last Saturday.  I worked on and wrote a version of the getattr
+function.  I also worked with Josh on seeking information about how to get the filesystem mounted, and I was able to locate the
+article linked below that provided some good insight on the subject.  I also provided general support and backup to John and David
+in the form of looking up various aspects of python that they needed clarification on, or any other subject that needed clarification.
+http://pysnippet.blogspot.com/2009/11/fuse-filesystem-in-userspace-part-1.html
+
+
+
+David Eling: Mainly worked on the fuse ground work and such at the start. Then worked on the actual functions and uses
+of the system with John during our meeting, details above. Worked later on trying to figure out how to get it to actually write and
+read, cant seem to get it to work. All attempts failed. Articles to read or check out
+- printerFS https://github.com/libfuse/libfuse/wiki/python-fuse-tutorial massiveFS
+https://github.com/libfuse/python-fuse/blob/master/example/xmp.py
+
+Newest version of voltronfs (v8)
+https://drive.google.com/file/d/0BxT963ywfmjFLXloa1RjeUVHUkU/view?usp=sharing
