@@ -1,0 +1,48 @@
+Group Members:
+Joshua Kiefer 
+Andrew Stone
+David (Vincent) Eling
+John Hutchins 
+
+Please write 4 sentences detailing your contributions to the project this week as well as any additional observations,suggestions 
+, and any code you may be be working on, that needs to be shared. Thanks guys.
+
+goals for the week: 
+1.establish a generic fuse file system on the raspberry pis  using python. 
+2. Touch base with all of our group members to figure out how you can uniquely contribute.
+3.using the pigpio library begin dumping timestamps to a .txt file for conversion to random byte for later use in file system.  
+4.learn the basic functionality of the FUSE file system and begin developing front end handling of read, write, and other Fuse functions.
+5. If you haven't already please log into the raspberry pis -duh…
+
+
+1.Joshua Kiefer-
+This week I set up the time stamp generator and began collecting time stamps for our project. 
+The program simply looks for an event on pin 23 and if an event occurs time.time () will create a timestamp of type double.
+From there I wrote the time stamps as a string to a file called timestamp.txt and separated them with a new line character.
+Script is running in background using nohup.
+
+2.Andrew Stone-This week I did quite a bit of reading about FUSE. 
+I looked specifically at the getattr function as we weren’t completely clear on the purpose of it in the last class period.
+We need the getattr function in order to have the ability to have file attributes passed back. 
+Some of these file attributes which we will have to define are inode, links, size, and access, modify, and change times. 
+After looking at a few tutorials, it seems that a good way to get started is to write the init, getattr, and readdir functions. 
+Defining these three will get us to the point where we can change directories. 
+
+3. David Eling-
+I did some research on FUSE and how other people used it in the past to do other operations.
+After that it was mostly thinking up ideas on how to create the functions within fuse rather than actually starting to work on them.
+In addition to our older plans, I have started considering the dumping of leftover true random numbers to a file after the user reads
+how ever many they want( how ever we end up serving them via seeding or otherwise) as to not waste them if we don’t use them all.
+And instead of just reading the timestamp file we can just read that file at the start of the read and if we run out just make more
+with the timestamps file. 
+
+Ref link on research: https://www.stavros.io/posts/python-fuse-filesystem/
+
+4.John Hutchins-
+I did some research on FUSE file systems and made a skeleton for us to start building the system off of. 
+As stated in the documentation, it takes two command line arguments, specifically the directory path and the mount point,
+and places these into variables for later use.  Currently the program assumes perfect input, in the future we can check
+for correct arguments.  I have provided both a link to the .py file and have pasted the code into the bottom of this page for
+easy review.  
+
+Link: https://drive.google.com/file/d/0B-20gRy1q0ptakNtRWhjU1lZV0U/view?usp=sharing 
